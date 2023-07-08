@@ -34,6 +34,12 @@ function buscarUsuario(user) {
     .then((resp_u) => resp_u.json())
     .then((data_u) => {
       console.log(data_u);
+      let nombre = '';
+      if (!data_u.name) {
+        nombre = data_u.login;
+      } else {
+        nombre = data_u.name;
+      }
       let company = '';
       if (!data_u.company) {
         company = "Ninguna afiliada";
@@ -45,7 +51,7 @@ function buscarUsuario(user) {
         <img src="${data_u.avatar_url}" class="avatar">
         <div class="datos">
           <h2>Id: ${data_u.login}</h2>
-          <h3>Nombre: ${data_u.name}</h3>
+          <h3>Nombre: ${nombre}</h3>
           <p>Repositorios: ${data_u.public_repos}</p>
           <p>Empresa: ${company}</p>
           <p>Link del usuario: <a href="${data_u.html_url}" target="_blank" rel="noopener noreferrer">${data_u.html_url}</a></p>
