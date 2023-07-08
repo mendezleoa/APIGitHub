@@ -10,18 +10,22 @@ form.addEventListener("input", () => {
 
   timer = setTimeout(() => {
     let users = document.getElementById("text-input").value
-    fetch('https://api.github.com/search/users?q='+ users )
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data.items);
-      resultados.innerHTML = '';
-      data.items.slice(0,3).forEach(user => {
-        buscarUsuario(user.url);
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+    if (users.trim().length == 0) {
+      return
+    } else {
+      fetch('https://api.github.com/search/users?q='+ users )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data.items);
+        resultados.innerHTML = '';
+        data.items.slice(0,3).forEach(user => {
+          buscarUsuario(user.url);
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    }
   }, 700)
 })
 

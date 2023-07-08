@@ -4,7 +4,43 @@
 
 body.dark {
   background: #161616;
-  color:#ffffff
+  color: #ffffff;
+}
+
+body.dark #temas {
+  background-color: #161616;
+  color: #ffffff;
+  border-color: white;
+}
+
+#temas {
+  background-color: transparent;
+  padding: 0 .5rem;
+  color: #161616;
+  border-radius: 25px;
+  border-style: solid;
+}
+
+.bar {
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+body.dark .bar form input {
+  border-color: #c4c4c4;
+  background-color: #161616;
+  color: #ffffff;
+}
+
+.bar form input {
+  margin-left: .5rem;
+  padding-left: .5rem;
+  width: 250px;
+  height: 30px;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #161616;
 }
 
 .tarjeta {
@@ -13,8 +49,9 @@ body.dark {
   margin: 1rem;
   padding: .5rem;
   max-width: 620px;
+  border-width: .2rem;
   border-radius: 1rem;
-  border-color: rgb(68, 90, 99);
+  border-color: #376380;
   border-style: solid;
   box-sizing: content-box;
 }
