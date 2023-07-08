@@ -30,10 +30,6 @@ body.dark {
   margin-top: .5rem;
   margin-left: 1rem;
 }
-.datos .bio {
-  overflow-wrap: break-word;
-  max-width: 300px;
-}
 
 @media (max-width: 520px) {
   .datos h2 {

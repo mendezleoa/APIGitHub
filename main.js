@@ -15,7 +15,7 @@ form.addEventListener("input", () => {
     .then((data) => {
       console.log(data.items);
       resultados.innerHTML = '';
-      data.items.slice(0,5).forEach(user => {
+      data.items.slice(0,3).forEach(user => {
         buscarUsuario(user.url);
       });
     })
@@ -30,19 +30,20 @@ function buscarUsuario(user) {
     .then((resp_u) => resp_u.json())
     .then((data_u) => {
       console.log(data_u);
-      let bio = '';
-      if (!data_u.bio) {
-        bio = "Sin biografía";
+      let company = '';
+      if (!data_u.company) {
+        company = "Ninguna afiliada";
       } else {
-        bio = data_u.bio;
+        company = data_u.company;
       }
       resultados.innerHTML += `
       <div class="tarjeta">
         <img src="${data_u.avatar_url}" class="avatar">
         <div class="datos">
           <h2>Id: ${data_u.login}</h2>
+          <h3>Nombre: ${data_u.name}</h3>
           <p>Repositorios: ${data_u.public_repos}</p>
-          <p class="bio">Biografía: ${bio}</p>
+          <p>Empresa: ${company}</p>
         </div>
       </div>`;
     })
