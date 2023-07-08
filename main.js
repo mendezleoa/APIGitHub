@@ -48,6 +48,7 @@ function buscarUsuario(user) {
           <h3>Nombre: ${data_u.name}</h3>
           <p>Repositorios: ${data_u.public_repos}</p>
           <p>Empresa: ${company}</p>
+          <p>Link del usuario: <a href="${data_u.html_url}" target="_blank" rel="noopener noreferrer">${data_u.html_url}</a></p>
         </div>
       </div>`;
     })
