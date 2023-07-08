@@ -49,6 +49,15 @@ function buscarUsuario(user) {
     })
 }
 
+if (localStorage.getItem('theme') == "dark") {
+  document.body.classList.add("dark")
+}
+
 botonTemas.addEventListener("click", () => {
   document.body.classList.toggle("dark")
+  if (document.body.classList.value == "dark") {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
 });
