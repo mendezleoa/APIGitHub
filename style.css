@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+}
+
+body.dark {
+  background: #161616;
+  color:#ffffff
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  padding: .5rem;
+  max-width: 620px;
+  border-radius: 1rem;
+  border-color: rgb(68, 90, 99);
+  border-style: solid;
+  box-sizing: content-box;
+}
+
+.avatar {
+  width: 30%;
+  height: 30%;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.datos {
+  margin-top: .5rem;
+  margin-left: 1rem;
+}
+.datos .bio {
+  overflow-wrap: break-word;
+  max-width: 300px;
+}
+
+@media (max-width: 520px) {
+  .datos h2 {
+    font-size: 18px;
+  }
+  .datos p {
+    font-size: 14px;
+  }
+}
