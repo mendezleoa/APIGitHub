@@ -40,11 +40,19 @@ function buscarUsuario(user) {
       } else {
         nombre = data_u.name;
       }
+
       let company = '';
       if (!data_u.company) {
         company = "Ninguna afiliada";
       } else {
         company = data_u.company;
+      }
+
+      let url = '';
+      if (data_u.html_url.length == 26) {
+        url = data_u.html_url;
+      } else {
+        url = data_u.html_url.substring(0,25) + "...";
       }
       resultados.innerHTML += `
       <div class="tarjeta">
@@ -54,7 +62,7 @@ function buscarUsuario(user) {
           <h3>Nombre: ${nombre}</h3>
           <p>Repositorios: ${data_u.public_repos}</p>
           <p>Empresa: ${company}</p>
-          <p>Link del usuario: <a href="${data_u.html_url}" target="_blank" rel="noopener noreferrer">${data_u.html_url}</a></p>
+          <p>Link del usuario: <a href="${data_u.html_url}" target="_blank" rel="noopener noreferrer">${url}</a></p>
         </div>
       </div>`;
     })
